@@ -6,11 +6,11 @@ const Hook = (props) => {
 
   const [userinfo, setUserinfo] = useState(
     {
-      "firstname": "Jim",
-      "lastname": "Crockett",
-      "email": "jcrokett@wildpeople.org",
-      "password": "The alabama",
-      "passwordconfirm": "River"
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "password": "",
+      "passwordconfirm": ""
     }
   )
 
