@@ -1,8 +1,37 @@
 .App {
   /* text-align: center; */
-  border: solid blue;
+  /* border: solid blue; */
+  padding: 10px;
   width: 300px;
   margin: auto;
+}
+
+.tabs{
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  margin-bottom: 12px;
+}
+
+.tab{
+  padding: 7px;
+  border: solid grey 1px;
+  display: inline-block;
+  margin-right: 5px;
+  /* height: 40px; */
+  width: 50px;
+  text-align: center;
+  /* vertical-align: middle; */
+}
+
+.labeltab {
+  vertical-align: 50%;
+}
+
+.context{
+  padding: 10px;
+  border: solid grey 1px;
+  height: 100px;
 }
 
 .App-logo {

@@ -21,8 +21,8 @@ const BoxForm = ({boxes, setBoxes}) => {
     e.preventDefault();
 
     setBoxes([...boxes,{
-      height: '100px',
-      width: '100px',
+      height: `${height}px`,
+      width: `${height}px`,
       backgroundColor: color,
       display: 'inline-block',
       marginRight: '20px'
@@ -39,8 +39,8 @@ const BoxForm = ({boxes, setBoxes}) => {
         <input type="text" value = {color} onChange={ colorHandler } />
       </div>
       <div>
-        {/* <label>Height/Width</label>
-        <input type="text" value = {height} onChange={ sizeHandler } /> */}
+        <label>Height/Width</label>
+        <input type="text" value = {height} onChange={ sizeHandler } />
         {/* onChange is needed no matter what */}
       </div>
       <input type="submit" value="Add"></input>
