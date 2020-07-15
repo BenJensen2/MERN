@@ -4,7 +4,7 @@ const BoxForm = ({boxes, setBoxes}) => {
   
 // State Data
   const [height, setHeight] = useState("");
-  const [width, setWidth] = useState("");
+  // const [width, setWidth] = useState("");
   const [color, setColor] = useState("");
 
 // HANDLERS
@@ -14,7 +14,7 @@ const BoxForm = ({boxes, setBoxes}) => {
 
   const sizeHandler = (e) => {
     setHeight(e.target.value)
-    setWidth(e.target.value)
+    // setWidth(e.target.value)
   };
 
   const boxHandler = (e) => {
