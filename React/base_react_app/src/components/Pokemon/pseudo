@@ -1,0 +1,10 @@
+import axion from 'axios'
+
+pokemon
+views back
+Reach router: @Reach
+ - looks at url & matches with path & component
+
+This is my pseudo code
+
+order routes most specific to least specific

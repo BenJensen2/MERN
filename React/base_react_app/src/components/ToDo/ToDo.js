@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import TaskForm from './TaskForm'
 import TaskDisplay from './TaskDisplay'
+import { Link } from '@reach/router';
 
 const ToDo = (props) => {
 
@@ -41,6 +42,7 @@ const checkHandler = (e,idx) => {
 
   return(
     <div>
+      <Link to ="/">Go Home</Link>
       <TaskForm
         tasks = {tasks}
         setTasks = {setTasks}

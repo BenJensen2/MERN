@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import BoxForm from './BoxForm'
 import BoxDisplay from './BoxDisplay'
+import { Link } from '@reach/router';
 
 const Box = (props) => {
   
@@ -29,6 +30,7 @@ const Box = (props) => {
 
   return(
     <div>
+      <Link to ="/">Go Home</Link>
       <BoxForm
           boxes = {boxes}
           setBoxes = {setBoxes}
