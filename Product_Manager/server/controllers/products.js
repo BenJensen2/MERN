@@ -22,7 +22,19 @@ module.exports = {
     console.log("We are creating a product")
     console.log(req.body);
     Product.create(req.body)
-      .then((product) => res.json(product))
+      .then((product) => {
+        console.log("Product Created")
+        res.json(product)
+      })
+      .catch((err) => res.json(err));
+  },
+
+  getProductByid: (req, res) => {
+    Product.findOne({_id: req.params.id})
+      .then((product) => { // product is the parameter passed into .then function
+        console.log("We found the product!");
+        res.json(product) // responding with a .json object of the product
+      })
       .catch((err) => res.json(err));
   },
 };
