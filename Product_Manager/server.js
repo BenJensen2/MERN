@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const port = 9001;
+const port = 8000;
 
 const cors = require('cors');
 app.use(cors());
@@ -14,3 +14,5 @@ require('./server/config/routes')(app);
 app.listen(port, () => {
     console.log(`App running on ${port}`)
 });
+
+//Server Works

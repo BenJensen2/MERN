@@ -1,9 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/Product_Manager", {
+mongoose
+  .connect("mongodb://localhost/ProductManager", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
-})
+    useFindAndModify: false,
+  })
+  .then(() => console.log("Established a connection to the databaseeee"))
+  .catch((err) =>
+    console.log("Something went wrong when connecting to the database", err)
+  );
 
-require('../models/Product');
+require("../models/Product");
