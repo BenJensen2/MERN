@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import Product from './Product';
 
-const ProductDisplay = ({products}) => {
+const ProductDisplay = ({products,deleteHandler}) => {
   return (
     <div>
       {
@@ -9,7 +10,7 @@ const ProductDisplay = ({products}) => {
         <section key = {i}>
           <Product
             product = {product}
-            idx = {i}
+            deleteHandler = {deleteHandler}
           />
         </section>
         )

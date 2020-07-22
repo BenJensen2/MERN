@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const ProductForm = ({products}) => {
+const ProductForm = ({products, setProducts}) => {
 
   // STATE DATA
   const [title, setTitle] = useState("");
@@ -23,7 +23,7 @@ const ProductForm = ({products}) => {
 
 
   const productHandler = (e) => {
-    e.preventDefault();
+    // e.preventDefault(); Keep out for up to date reload
     console.log("Product Handler")
 
     let newProduct = {
@@ -35,10 +35,14 @@ const ProductForm = ({products}) => {
     axios.post("http://localhost:8000/api/product/new", newProduct)
       .then(response => { 
         console.log("New Product")
-        console.log(response) })
+        console.log(response) 
+        // navigate("/"); Not Needed
+      })
       .catch(err => {
         console.log(err.response.data.errors)
       });
+
+    setProducts(...[products],newProduct);
     setTitle("")
     setPrice("")
     setDescription("")
