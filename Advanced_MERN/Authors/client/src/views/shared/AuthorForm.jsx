@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from '@reach/router';
+//Bootstrap
+import Button from 'react-bootstrap/Button';
 
-const AuthorForm = (props) => {
+const AuthorForm = ({author, setAuthor,formHandler}) => {
   // STATE DATA
   const [name, setName] = useState("");
 
@@ -10,15 +12,55 @@ const AuthorForm = (props) => {
     setName(e.target.value)
   }
 
+  const buttonStyle = {
+    marginRight: "10px"
+  }
+
+  const divStyle = {
+    border: "solid 1px black",
+    display: "inline-block",
+    padding: "10px"
+  }
+
+  
+  useEffect(()=>{
+    setName(author.name)
+    console.log("This is the author",author)
+  },[])
+
+  // const authorHandler= (e)=>{
+  //   e.preventDefault()
+  //   var updatedAuthor = author;
+  //   updatedAuthor.name = name;
+  //   console.log("updated Author",updatedAuthor)
+  //   setAuthor(updatedAuthor);
+  //   console.log("Author",author)
+  //   formHandler(e)
+  // }
+
+  
+
   return (
-    <div>
-      <form>
+    <div style={divStyle}>
+      <form onSubmit={formHandler(name)}>
         <div>
           <label>Name</label>
-          <input type="text" value={name} onChange={nameHandler} />
+          <input  type="text" value={name} onChange={nameHandler} />
         </div>
-        <button><Link style={{textDecoration: "none"}} to={`/`}>Cancel</Link></button>
-        <input type="submit" value="Submit"></input>
+        <Button 
+          variant="primary" 
+          style={buttonStyle}>
+          <Link
+            style={{color:"white"}}
+            to={`/`}>
+              Cancel
+          </Link>
+        </Button>
+        <Button 
+          type="submit" 
+          value="Submit">
+            Submit
+          </Button>
       </form>
     </div>
   )

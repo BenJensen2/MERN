@@ -17,7 +17,7 @@ module.exports = {
         console.log("We are in author.find");
         res.json(author); // responding with a .json object of the author
       })
-      .catch((err) => res.json(err)); //res.status(400).json(err)
+      .catch((err) => res.status(400).json(err)); //res.status(400).json(err)
   },
 
   createAuthor: (req, res) => {
@@ -28,7 +28,7 @@ module.exports = {
         console.log("Product Created");
         res.json(author);
       })
-      .catch((err) => res.json(err)); //res.status(400).json(err)
+      .catch((err) => res.status(400).json(err)); //res.status(400).json(err)
   },
 
   getAuthorByid: (req, res) => {
@@ -38,7 +38,7 @@ module.exports = {
         console.log("We found the author!");
         res.json(author); // responding with a .json object of the author
       })
-      .catch((err) => res.json(err));
+      .catch((err) => res.status(400).json({message:"Unable to find an author with that id"}));
   },
 
   updateAuthor: (req, res) => {
@@ -52,12 +52,12 @@ module.exports = {
         console.log("We found the author!");
         res.json(author); // responding with a .json object of the author
       })
-      .catch((err) => res.json(err));
+      .catch((err) => res.status(400).json(err));
   },
 
   deleteAuthor: (req, res) => {
     Author.deleteOne({ _id: req.params.id })
       .then((response) => res.json(response))
-      .catch((err) => res.json(err));
+      .catch((err) => res.status(400).json(err));
   },
 };
