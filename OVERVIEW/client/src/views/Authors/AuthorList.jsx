@@ -19,7 +19,7 @@ const AuthorList = ({ style }) => {
     return authorsList.sort((a, b) => a.name.localeCompare(b.name))    
   }
   const getAuthors = () => {
-    axios.get("http://localhost:8000/api/authors")
+    axios.get("http://localhost:8000/api/allAuthors")
       .then(res => {
         console.log(res.data)
         setAuthors(sorted(res.data))
@@ -47,7 +47,7 @@ const AuthorList = ({ style }) => {
 
   return (
     <div>
-      <p><Link to={`/new`}>Add an Author</Link></p>
+      <p><Link to={`/Authors/new`}>Add an Author</Link></p>
       <div>
         <Table bordered striped>
           <thead>

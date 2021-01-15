@@ -35,7 +35,7 @@ const AuthorNew = ({author,setAuthor,style}) => {
     axios.post("http://localhost:8000/api/author/new",newAuthor)
       .then(res => {
         console.log(res.data)
-        navigate("/")
+        navigate("/Authors")
       })
       // ,then()
       .catch(err => {
