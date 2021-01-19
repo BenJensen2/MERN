@@ -1,17 +1,26 @@
-const authors = require('../controllers/authors');
-const PersonController = require('../controllers/person');
+const authorController = require('../controllers/authorController');
+const personController = require('../controllers/personController');
+const productController = require('../controllers/productController');
 
 module.exports = function(app){
     
     // AUTHORS
-    app.get('/api/authors', authors.index); // POSTMAN: Works
-    app.get('/api/allAuthors', authors.getAuthors) // POSTMAN: Works
-    app.get('/api/author/:id',authors.getAuthorByid); // POSTMAN: Works
-    app.delete('/api/author/:id',authors.deleteAuthor); // POSTMAN: Works
-    app.post('/api/author/new', authors.createAuthor); // POSTMAN: Works
-    app.put('/api/author/update/:id',authors.updateAuthor); // POSTMAN: Works
+    app.get('/api/authors', authorController.index);
+    app.get('/api/allAuthors', authorController.getAuthors)
+    app.get('/api/author/:id',authorController.getAuthorByid);
+    app.delete('/api/author/:id',authorController.deleteAuthor);
+    app.post('/api/author/new', authorController.createAuthor);
+    app.put('/api/author/update/:id',authorController.updateAuthor);
 
     // PEOPLE
-    app.get('/api/people', PersonController.personIndex);
-    app.post('/api/createPerson', PersonController.createPerson);
+    app.get('/api/people', personController.personIndex);
+    app.post('/api/createPerson', personController.createPerson);
+    
+    // PRODUCTS
+    app.get('/api/products', productController.index);
+    app.get('/api/allProducts', productController.getProducts)
+    app.get('/api/product/:id',productController.getProductByid);
+    app.delete('/api/product/:id',productController.deleteProduct);
+    app.post('/api/product/new', productController.createProduct);
+    app.put('/api/product/update/:id',productController.updateProduct);
 }
